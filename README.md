@@ -17,3 +17,9 @@ You need to perform several commands.
     docker-compose build
 
     docker-compose up
+    
+# General 
+
+This project uses `flask` as a web framework and `mongodb` as a database.
+
+The default port which is mapped is `5000`. You could set different one in file `docker-compose.yml`
