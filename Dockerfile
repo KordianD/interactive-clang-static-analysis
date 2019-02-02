@@ -1,6 +1,4 @@
 FROM python:3
-COPY . /app
-WORKDIR /app
+ADD . /todo
+WORKDIR /todo
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["src/app.py"]
