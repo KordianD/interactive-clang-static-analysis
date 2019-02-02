@@ -23,3 +23,11 @@ You need to perform several commands.
 This project uses `flask` as a web framework and `mongodb` as a database.
 
 The default port which is mapped is `5000`. You could set different one in file `docker-compose.yml`
+
+# Development
+
+If you want to develop code, you need several packages, simply run:
+
+    pip install -r requirements_dev.txt
+    
+This packages enable running tests on the local machine.
