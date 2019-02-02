@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/KordianD/interactive-clang-static-analysis.svg?branch=master)](https://travis-ci.com/KordianD/interactive-clang-static-analysis)
+[![Build Status](https://travis-ci.org/KordianD/interactive-clang-static-analysis.svg?branch=master)](https://travis-ci.com/KordianD/interactive-clang-static-analysis)
 
 # interactive-clang-static-analysis
 Showing clang static analysis errors from project.
