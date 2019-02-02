@@ -16,7 +16,7 @@ def main():
     # items = db.clang.find()
     # items = [item for item in _items]
 
-    return render_template('layout.html')
+    return render_template('home.html')
 
 
 if __name__ == "__main__":
