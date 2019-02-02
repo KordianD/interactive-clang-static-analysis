@@ -4,11 +4,11 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-client = MongoClient(
-    os.environ['DB_PORT_27017_TCP_ADDR'],
-    27017)
+#client = MongoClient(
+#    os.environ['DB_PORT_27017_TCP_ADDR'],
+#    27017)
 
-db = client.clang
+#db = client.clang
 
 
 @app.route('/')
@@ -16,7 +16,7 @@ def main():
     # items = db.clang.find()
     # items = [item for item in _items]
 
-    return render_template('main.html')
+    return render_template('layout.html')
 
 
 if __name__ == "__main__":
