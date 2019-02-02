@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name='interactive-clang-static-analysis',
-    packages=['interactive-clang-static-analysis'],
+    name='src',
+    packages=['src'],
     version='0.01',
     description='interactive-clang-static-analysis',
     author='KordianD',
