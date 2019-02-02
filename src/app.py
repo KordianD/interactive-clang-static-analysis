@@ -7,12 +7,13 @@ app = Flask(__name__)
 client = MongoClient(
     os.environ['DB_PORT_27017_TCP_ADDR'],
     27017)
-db = client.tododb
+
+db = client.clang
 
 
 @app.route('/')
 def todo():
-    _items = db.tododb.find()
+    _items = db.clang.find()
     items = [item for item in _items]
 
     return render_template('todo.html', items=items)
@@ -24,7 +25,7 @@ def new():
         'name': request.form['name'],
         'description': request.form['description']
     }
-    db.tododb.insert_one(item_doc)
+    db.clang.insert_one(item_doc)
 
     return redirect(url_for('todo'))
 
