@@ -12,22 +12,11 @@ db = client.clang
 
 
 @app.route('/')
-def todo():
-    _items = db.clang.find()
-    items = [item for item in _items]
+def main():
+    # items = db.clang.find()
+    # items = [item for item in _items]
 
-    return render_template('todo.html', items=items)
-
-
-@app.route('/new', methods=['POST'])
-def new():
-    item_doc = {
-        'name': request.form['name'],
-        'description': request.form['description']
-    }
-    db.clang.insert_one(item_doc)
-
-    return redirect(url_for('todo'))
+    return render_template('main.html')
 
 
 if __name__ == "__main__":
