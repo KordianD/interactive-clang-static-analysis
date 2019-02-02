@@ -31,3 +31,7 @@ If you want to develop code, you need several packages, simply run:
     pip install -r requirements_dev.txt
     
 This packages enable running tests on the local machine.
+
+To run tests:
+
+    make test
