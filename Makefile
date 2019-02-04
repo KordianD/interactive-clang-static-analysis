@@ -5,7 +5,7 @@ fix:
 	autopep8 test --recursive --in-place
 
 test:
-	pytest -vv
+	python -m pytest -vv
 	py.test --cov  src test --cov-report term-missing
 	flake8 src test --max-line-length 120
 	pylint --rcfile=standard.rc --disable=missing-docstring src test
