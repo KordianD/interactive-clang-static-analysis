@@ -1,20 +1,19 @@
-# import os
+import os
 from flask import Flask, render_template
-# from pymongo import MongoClient
+from pymongo import MongoClient
 
 APP = Flask(__name__)
 
+CLIENT = MongoClient(
+    os.environ['DB_PORT_27017_TCP_ADDR'],
+    27017)
 
-# client = MongoClient(
-#    os.environ['DB_PORT_27017_TCP_ADDR'],
-#    27017)
-
-# db = client.clang
+DB = CLIENT.clang_warnings
 
 
 @APP.route('/')
 def main():
-    # items = db.clang.find()
+    # items = DB.clang_warnings.find()
     # items = [item for item in _items]
 
     return render_template('home.html')
