@@ -1,15 +1,15 @@
 from src.parser.clang_warning import ClangWarning
 
 
-def get_clang_warnings(warnings: list) -> list:
+def find_clang_warnings(path_to_file: str) -> list:
     clang_warnings: list = []
-    for line in warnings:
+    for line in open(path_to_file):
         if 'warning:' in line:
             end_of_filepath: str = line.find(':')
             path_to_file: str = line[:end_of_filepath]
-            end_of_number: int = line[end_of_filepath+1:].find(':')
+            end_of_number: int = line[end_of_filepath + 1:].find(':')
 
-            line_number: int = int(line[end_of_filepath+1:][:end_of_number])
+            line_number: int = int(line[end_of_filepath + 1:][:end_of_number])
 
             start_of_check_name: int = line.rfind('[')
 
