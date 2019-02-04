@@ -2,7 +2,7 @@
 from flask import Flask, render_template
 # from pymongo import MongoClient
 
-app = Flask(__name__)
+APP = Flask(__name__)
 
 
 # client = MongoClient(
@@ -12,7 +12,7 @@ app = Flask(__name__)
 # db = client.clang
 
 
-@app.route('/')
+@APP.route('/')
 def main():
     # items = db.clang.find()
     # items = [item for item in _items]
@@ -20,15 +20,15 @@ def main():
     return render_template('home.html')
 
 
-@app.route('/about')
+@APP.route('/about')
 def about():
     return render_template('about.html')
 
 
-@app.route('/checks')
+@APP.route('/checks')
 def checks():
     return render_template('checks.html')
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+    APP.run(host='0.0.0.0', debug=True)

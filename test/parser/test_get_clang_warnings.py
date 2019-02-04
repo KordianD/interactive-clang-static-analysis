@@ -1,4 +1,4 @@
-from src.parser.GitParser import get_clang_warnings
+from src.parser.git_parser import get_clang_warnings
 
 clang_warning = [line.rstrip('\n') for line in open(
     'test/parser/data/one_override_warning.txt')]

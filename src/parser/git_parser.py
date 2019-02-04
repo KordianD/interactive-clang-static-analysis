@@ -1,8 +1,4 @@
-from src.parser.ClangWarning import ClangWarning
-
-
-def get_name_and_date_from_blame_git_blame(filename: str, line_number: int):
-    return None
+from src.parser.clang_warning import ClangWarning
 
 
 def get_clang_warnings(warnings: list) -> list:
