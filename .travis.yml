@@ -2,6 +2,7 @@ language: python
 python:
   - "3.6"
 install:
+  - pip isntall -r requirements.txt --upgrade
   - pip install -r requirements_dev.txt --upgrade
   - pip install -e .
 
