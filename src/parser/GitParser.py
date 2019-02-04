@@ -1,4 +1,4 @@
-from src.parser import ClangWarning
+from src.parser.ClangWarning import ClangWarning
 
 
 def get_name_and_date_from_blame_git_blame(filename: str, line_number: int):
@@ -8,16 +8,18 @@ def get_name_and_date_from_blame_git_blame(filename: str, line_number: int):
 def get_clang_warnings(warnings: list) -> list:
     clang_warnings: list = []
     for line in warnings:
-        if 'warning' in line:
+        if 'warning:' in line:
             end_of_filepath: str = line.find(':')
-
             path_to_file: str = line[:end_of_filepath]
-            line_number: int = int(line[:end_of_filepath + 1])
+            end_of_number: int = line[end_of_filepath+1:].find(':')
+
+            line_number: int = int(line[end_of_filepath+1:][:end_of_number])
 
             start_of_check_name: int = line.rfind('[')
 
             check_name: str = line.rstrip()[start_of_check_name + 1:-1]
 
-            clang_warnings.append(ClangWarning(check_name, path_to_file, line_number))
+            clang_warnings.append(ClangWarning(
+                check_name, path_to_file, line_number))
 
     return clang_warnings
