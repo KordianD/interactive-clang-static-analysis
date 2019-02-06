@@ -1,4 +1,5 @@
 from src.parser.clang_warning import ClangWarning
+from src.parser.scm_parser import extract_person
 
 
 def find_clang_warnings(path_to_file: str) -> list:
@@ -15,7 +16,9 @@ def find_clang_warnings(path_to_file: str) -> list:
 
             check_name: str = line.rstrip()[start_of_check_name + 1:-1]
 
+            check_owner: str = extract_person(path_to_file, line_number)
+
             clang_warnings.append(ClangWarning(
-                check_name, path_to_file, line_number))
+                check_name, path_to_file, line_number, check_owner))
 
     return clang_warnings

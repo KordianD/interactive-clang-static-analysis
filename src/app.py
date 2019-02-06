@@ -29,5 +29,10 @@ def checks():
     return render_template('checks.html')
 
 
+@APP.route('/update_database')
+def update_database():
+    pass
+
+
 if __name__ == "__main__":
     APP.run(host='0.0.0.0', debug=True)

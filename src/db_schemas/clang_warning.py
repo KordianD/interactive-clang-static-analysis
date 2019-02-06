@@ -1,4 +1,4 @@
-from mongoengine import Document, StringField, IntField, DateTimeField
+from mongoengine import Document, StringField, IntField
 
 
 class ClangWarning(Document):
@@ -6,4 +6,3 @@ class ClangWarning(Document):
     path_to_file = StringField(required=True)
     line_number = IntField(required=True)
     owner = StringField(required=True)
-    date = DateTimeField(required=True)

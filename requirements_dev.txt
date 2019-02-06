@@ -4,3 +4,5 @@ flake8
 autopep8
 pylint
 pyflakes
+pytest-mock
+mock

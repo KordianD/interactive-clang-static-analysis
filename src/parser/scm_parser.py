@@ -2,6 +2,11 @@ import subprocess
 import re
 
 
+def extract_person(path_to_file: str, line_number: int):
+    git_blame_output: str = call_git_blame(path_to_file, line_number)
+    return extract_person_from_git_blame_output(git_blame_output)
+
+
 def extract_person_from_git_blame_output(git_blame_output: str):
     found_name = re.search(r'\((\S*)\s', git_blame_output)
     return found_name.group(1)
